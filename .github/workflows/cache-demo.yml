@@ -20,9 +20,9 @@ jobs:
           key: cache-3e62b4e
 
       - name: prime-cache-3e62b4e
-        run: echo "Cache hit: ${{ steps.cache-step.outputs.cache-hit }}"
+        run: echo "Cache hit ${{ steps.cache-step.outputs.cache-hit }}"
 
-      - name: Create dummy cache content (only on miss)
+      - name: Create dummy cache content
         if: steps.cache-step.outputs.cache-hit != 'true'
         run: |
           mkdir -p ~/.cache/demo
